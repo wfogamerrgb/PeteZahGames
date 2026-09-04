@@ -718,7 +718,7 @@ server.on('upgrade', (req, socket, head) => {
   wisp.routeRequest(req, socket, head);
 });
 
-const port = parseInt(process.env.PORT || '3000');
+const port = parseInt(process.env.PORT || Math.floor(Math.random() * (7000 - 3000 + 1)) + 3000);
 server.keepAliveTimeout = 65000;
 server.headersTimeout = 70000;
 server.requestTimeout = 120000;

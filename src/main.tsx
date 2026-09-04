@@ -28,6 +28,9 @@ if (!lite) {
     document.fonts.load("600 16px plusjakartasans-obf").catch(() => {});
   }
 }
+window.addEventListener("beforeunload", (event) => {
+  event.returnValue = true;
+});
 
 function applyStoredSettings() {
   const get = (k: string) => localStorage.getItem(k);
